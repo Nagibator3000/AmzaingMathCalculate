@@ -15,13 +15,25 @@ public class Main {
                 QuadraticEquation.calculate();
                 break;
             case 2:
-                Primes.enterScreen();
-                System.out.println(Primes.num);
+                starPrimeCalc();
+                starPrimeCalc();
+                starPrimeCalc();
+
 
                 break;
             case 3:
                 Nod.enterNums();
+                Nod.calculateNod();
         }
+
+    }
+
+    private static void starPrimeCalc() {
+        new Thread(() -> {
+            Primes p = new Primes();
+            p.calc(10000);
+            System.out.println(p.num);
+        }).start();
 
     }
 }
